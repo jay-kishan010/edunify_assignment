@@ -1,17 +1,19 @@
-// server/db.js
-import mysql from 'mysql2/promise';
+// backend/config.js
+import mysql from 'mysql2';
 
-const dbConfig = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-};
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '1234',
+  database: 'schools',
+});
 
-export const getConnection = async () => {
-  return (
-    
-    await mysql.createConnection(dbConfig)
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database:', err);
+    return;
+  }
+  console.log('Connected to the MySQL database');
+});
 
-);
-};
+export default db;

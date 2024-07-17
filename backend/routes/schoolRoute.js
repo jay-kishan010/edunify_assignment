@@ -1,11 +1,12 @@
-const express =require("express")
+// backend/routes/schoolRoutes.js
+import express from 'express';
+import multer from 'multer';
+import { addSchool, getSchools } from '../controllers/schoolController.js';
 
-const multer=require("multer")
+const router = express.Router();
+// const upload = multer({ dest: 'uploads/' });
 
-const schoolRouter=express.Router();
+router.post('/schools', addSchool);
+router.get('/schools', getSchools);
 
-
-schoolRouter.post("/add",addSchool);
-schoolRouter.get("/list",listSchool);
-
-module.exports=schoolRouter;
+export default router;
