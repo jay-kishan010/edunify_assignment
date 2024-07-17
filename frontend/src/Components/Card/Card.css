@@ -1,0 +1,43 @@
+.card{
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+
+}
+
+.card-img-container{
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+overflow: hidden;
+
+}
+.card-img-container img{
+    height: 300px;
+    width: 100%;
+}
+.card-info{
+    padding: 20px;
+}
+
+.card-info .card-name{
+    font-size: 1.5rem;
+    font-weight: 600;
+
+}
+.card-city{
+    font-size: 1.2rem;
+    margin: auto;
+}
+.card-address{
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.card button{
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    padding: 13px;
+    background-color: #646cffaa;
+    color: white;
+}
