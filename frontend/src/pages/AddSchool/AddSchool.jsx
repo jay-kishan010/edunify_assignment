@@ -1,12 +1,12 @@
-// src/components/AddSchool.jsx
 
 import { useForm } from 'react-hook-form';
-// import axios from 'axios';
+import axios from 'axios';
 import "./AddSchool.css"
-
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 export default function AddSchool() {
   const { register, handleSubmit, formState: { errors } } = useForm();
-
+const navigate=useNavigate();
   const onSubmit = async (data) => {
     const formData = new FormData();
     Object.keys(data).forEach(key => {
@@ -15,18 +15,22 @@ export default function AddSchool() {
     const imageFile = data.image[0];
     formData.append('image', imageFile);
 
-    // await axios.post('http://localhost:5000/api/schools', formData, {
-    //   headers: {
-    //     'Content-Type': 'multipart/form-data',
-    //   },
-    // });
+  const response=  await axios.post('http://localhost:5000/api/schools', formData);
+  if(response){
+    toast.success("School added successfully!!!")
+     navigate('/');
+  }
+  else{
+    toast.error("Something went wrong!!!")
+  }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <div className="form-group">
         <label>Name</label>
-        <input {...register('name', { required: true })} />
+        <input {...register('name', { required: true },
+        { minLength: 3, maxLength: 20 })}  />
         {errors.name && <span className="error">This field is required</span>}
       </div>
       <div className="form-group">

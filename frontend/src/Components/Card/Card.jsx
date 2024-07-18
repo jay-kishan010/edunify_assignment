@@ -1,16 +1,18 @@
+// import { useEffect } from "react";
 import "./Card.css"
-
-const Card = () => {
+// import axios from "axios";
+const Card = ({name,address,city,image}) => {
+   
   return (
    <div className="card">
     <div className="card-img-container">
-        <img src="https://uniformapp.in/admin_area/school_images/La_Martiniere_College_Lucknow_image1_7.jpeg" alt="" className="card-img" />
+        <img src={`http://localhost:5000/img/${image}`} alt="" className="card-img" />
     </div>
 
     <div className="card-info">
-        <h3 className="card-name">La Martiniere College</h3>
-        <p className="card-address">Hazratganj</p>
-        <p className="card-city">Lucknow</p>
+        <h3 className="card-name">{name}</h3>
+        <p className="card-address">{address}</p>
+        <p className="card-city">{city}</p>
     </div>
 <button>Apply Now</button>
    </div>

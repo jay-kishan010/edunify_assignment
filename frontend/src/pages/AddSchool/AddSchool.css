@@ -14,12 +14,12 @@
       margin-bottom: 1em;
     }
 
-    .form-group > label {
+    .form-group  label {
       display: block;
       margin-bottom: 0.5em;
     }
 
-    .form-group > input {
+    .form-group  input {
       width: 100%;
       padding: 0.5em;
       border: 1px solid #ccc;
@@ -44,3 +44,20 @@
       background-color: #646cffaa;
     }
   
+
+    
+@media (max-width:700px) {
+
+  
+  .form {
+
+    max-width: 300px;
+    margin: 16px auto;
+    padding: 1em;
+    margin-top: 22px;
+   
+  }
+
+
+  
+}

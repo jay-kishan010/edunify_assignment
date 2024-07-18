@@ -20,4 +20,7 @@ const createSchoolTable = () => {
   });
 };
 
-createSchoolTable();
+
+
+
+export default createSchoolTable;
